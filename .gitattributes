@@ -1,0 +1,5 @@
+* text=auto
+
+setup.sh merge=ours
+session.vim merge=ours
+db.sql merge=ours

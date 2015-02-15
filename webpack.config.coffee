@@ -1,0 +1,42 @@
+path = require('path')
+current = process.cwd()
+
+webpack = require 'webpack'
+
+module.exports =
+  resolve:
+    extensions: [
+      '',
+      '.js',
+      '.json',
+      '.html',
+      '.jsx',
+      '.cjsx',
+      '.coffee'
+    ]
+
+    modulesDirectories: [
+      'node_modules'
+      'bower_components'
+    ]
+
+    root: [
+      path.join current, '../../node_moudles'
+      path.join current, '../../bower_components'
+    ]
+
+  entry: './app/src/app'
+
+  output:
+    path: './app/scripts/'
+    filename: 'build.js'
+    # sourceMapFilename: 'map/[file].map'
+
+  # devtool: '#source-map'
+
+  module:
+    loaders: [
+      { test: /\.cjsx$/, loader: 'coffee-loader!cjsx-loader' }
+      { test: /\.coffee$/, loader: 'coffee-loader' }
+      { test: /\.html$/, loader: 'html-loader' }
+    ]
