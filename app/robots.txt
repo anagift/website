@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /info.php
+Disallow: /dev/
+Disallow: /test/
+Disallow: /backup/
+Disallow: /sample/
+Disallow: /logs/
+Disallow: /tmp/
+Disallow: /admin/
+Disallow: /app/
+Disallow: /docs/

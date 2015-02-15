@@ -1,0 +1,10 @@
+.DS_Store
+
+assets/*
+coverage/*
+docs/*
+scripts/*
+styles/*
+
+!.gitkeep
+!assets/icons/*.png
