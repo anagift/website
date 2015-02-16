@@ -3,7 +3,7 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd pathname
+cd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -127,7 +127,7 @@ exe s:l
 normal! zt
 8
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
 enew
@@ -139,10 +139,10 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/src/components/sample.cjsx
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/src/components/sample.cjsx
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -157,10 +157,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/src/directives/sample.coffee
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/src/directives/sample.coffee
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -175,10 +175,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/src/controllers/sample.coffee
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/src/controllers/sample.coffee
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -193,10 +193,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/src/directives/main.coffee
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/src/directives/main.coffee
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -211,10 +211,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/src/controllers/main.coffee
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/src/controllers/main.coffee
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -229,10 +229,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/src/config/routes.coffee
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/src/config/routes.coffee
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -247,10 +247,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/src/app.coffee
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/src/app.coffee
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -265,10 +265,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/\[quickrun\ output]
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/\[quickrun\ output]
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -283,10 +283,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/views/main.html
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/views/main.html
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -301,10 +301,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/index.html
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/index.html
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -319,10 +319,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/notes.md
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/notes.md
 setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -384,7 +384,7 @@ exe '13resize ' . ((&lines * 15 + 36) / 73)
 exe 'vert 13resize ' . ((&columns * 60 + 136) / 272)
 exe '14resize ' . ((&lines * 54 + 36) / 73)
 exe 'vert 14resize ' . ((&columns * 60 + 136) / 272)
-tabedit pathname/app/sass
+tabedit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/sass
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -488,7 +488,7 @@ exe s:l
 normal! zt
 2
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
 enew
@@ -500,10 +500,10 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/sass/motion.sass
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/sass/motion.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -518,10 +518,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/sass/function.sass
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/sass/function.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -536,10 +536,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/sass/mixins.sass
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/sass/mixins.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -554,10 +554,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/sass/module.sass
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/sass/module.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -572,10 +572,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/sass/state.sass
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/sass/state.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -590,10 +590,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/sass/theme.sass
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/sass/theme.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -608,10 +608,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/sass/layout.sass
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/sass/layout.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -626,10 +626,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/sass/style.sass
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/sass/style.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -644,10 +644,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/sass/base.sass
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/sass/base.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -662,10 +662,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/\[quickrun\ output]
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/\[quickrun\ output]
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -680,10 +680,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/views/main.html
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/views/main.html
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -698,10 +698,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/app/index.html
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/index.html
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -716,10 +716,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/notes.md
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/notes.md
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -734,7 +734,7 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
 edit ~/dotfiles/vimfiles/doc/log_sass.txt
@@ -752,7 +752,7 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 3wincmd w
 exe '1resize ' . ((&lines * 62 + 36) / 73)
@@ -787,7 +787,7 @@ exe '15resize ' . ((&lines * 15 + 36) / 73)
 exe 'vert 15resize ' . ((&columns * 60 + 136) / 272)
 exe '16resize ' . ((&lines * 54 + 36) / 73)
 exe 'vert 16resize ' . ((&columns * 60 + 136) / 272)
-tabedit pathname/db.sql
+tabedit /Users/keiji/projects/anagift/project/apps/www.anagift.com/db.sql
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -821,10 +821,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit pathname/notes.md
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/notes.md
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -839,7 +839,7 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
 edit ~/dotfiles/vimfiles/doc/log_db.txt
@@ -857,7 +857,7 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd pathname
+lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 3wincmd w
 exe 'vert 1resize ' . ((&columns * 211 + 136) / 272)
