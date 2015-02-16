@@ -11,4 +11,5 @@ gulp.task 'sass', ->
   ]
     .pipe sass
       indentedSyntax: true
+      errorLogConsole: true
     .pipe gulp.dest './app/styles/'
