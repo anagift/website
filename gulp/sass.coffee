@@ -2,14 +2,15 @@
 
 gulp = require 'gulp'
 
+plumber = require 'gulp-plumber'
 sass = require 'gulp-sass'
 
 gulp.task 'sass', ->
   gulp.src [
     './app/sass/**/*.sass'
-    './app/sass/**/_*.scss'
   ]
+    .pipe plumber()
     .pipe sass
       indentedSyntax: true
-      errorLogConsole: true
+      errLogToConsole: true
     .pipe gulp.dest './app/styles/'
