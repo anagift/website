@@ -13,9 +13,8 @@ gulp.task 'webpack', (cb) ->
 
 execWebpack = (config) ->
   webpack config, (err, stats) ->
-    # enable message log
-    # if (err) then throw new gutil.PluginError(
-    #   'webpack', err
-    # )
-    # gutil.log "[webpack]", stats.toString
-    #   color: true
+    if (err) then throw new gutil.PluginError(
+      'webpack', err
+    )
+    gutil.log "[webpack]", stats.toString
+      color: true
