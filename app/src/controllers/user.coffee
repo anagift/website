@@ -2,8 +2,9 @@
 
 app = angular.module 'app'
 
-app.controller 'UserCtrl', ($scope) ->
-  $scope.users = [
-    { name: "userA", total: 1000 }
-    { name: "userB", total: 2000 }
-  ]
+app.controller 'UserCtrl', [
+  '$scope', '$resource', 'userList',
+  ($scope, $resource, userList) ->
+    userList.query (res) ->
+      $scope.users = res
+]

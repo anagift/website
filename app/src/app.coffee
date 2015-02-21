@@ -2,15 +2,18 @@
 
 require 'angular'
 require 'angular-route'
+require 'angular-resource'
 require 'angular-mocks'
 
 module.exports = angular.module 'app', [
   'ngRoute'
+  'ngResource'
   'ngMockE2E'
 ]
 
 # config
 require './config/routes'
+require './config/mock'
 
 # controllers
 require './controllers/main'
@@ -22,3 +25,4 @@ require './controllers/benchmark'
 require './directives/main'
 require './directives/sample'
 require './directives/benchmark'
+require './services/user'
