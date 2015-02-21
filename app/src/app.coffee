@@ -12,7 +12,7 @@ module.exports = angular.module 'app', [
 ]
 
 # config
-require './config/routes'
+require './config/route'
 require './config/mock'
 
 # controllers

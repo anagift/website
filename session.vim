@@ -12,7 +12,7 @@ badd +1 notes.md
 badd +1 app/index.html
 badd +1 app/views/main.html
 badd +1 app/src/app.coffee
-badd +1 app/src/config/routes.coffee
+badd +1 app/src/config/route.coffee
 badd +1 app/src/controllers/main.coffee
 badd +1 app/src/controllers/sample.coffee
 badd +1 app/src/directives/sample.coffee
@@ -232,7 +232,7 @@ normal! 0
 lcd /Users/keiji/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/src/config/routes.coffee
+edit /Users/keiji/projects/anagift/project/apps/www.anagift.com/app/src/config/route.coffee
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
