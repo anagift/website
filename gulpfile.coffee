@@ -26,11 +26,12 @@ gulp.task 'watch', ->
     './app/src/**/*.coffee'
     './app/src/**/*.cjsx'
     './app/views/**/*.html'
-    './app/sass/**/*'
-  ], ['sass', 'webpack']
+  ], ['webpack']
   .on 'change', (event) ->
     event.path + ' was ' + event.type
 
-  #gulp.watch , ['sass']
-  #  .on 'change', (event) ->
-  #    event.path + ' was ' + event.type
+  gulp.watch [
+    './app/sass/**/*'
+  ], ['sass']
+    .on 'change', (event) ->
+      event.path + ' was ' + event.type
