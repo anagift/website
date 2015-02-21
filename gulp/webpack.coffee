@@ -10,10 +10,6 @@ webpack_config = require '../webpack.config.coffee'
 
 gulp.task 'webpack', ->
   webpack webpack_config, (err, stats) ->
-    if (err) then throw new gutil.PluginError(
-      'webpack', err
-    )
-
     statsConfig = stats.toString
       colors: true
       chunks: false
@@ -22,9 +18,10 @@ gulp.task 'webpack', ->
       timings: false
       assets: false
 
-    gutil.log "[webpack]", statsConfig
+    if (statsConfig)
+      gutil.log '[webpack]', statsConfig
 
     notifier.notify
-      titie: '[sass]'
+      titie: '[webpack]'
       message: statsConfig
       sound: true
