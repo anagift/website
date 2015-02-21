@@ -6,7 +6,7 @@ plumber   = require 'gulp-plumber'
 notifier  = require 'node-notifier'
 
 sass = require 'gulp-sass'
-bourbon = require 'node-bourbon'
+neat = require 'node-neat'
 
 gulp.task 'sass', ->
   gulp.src [
@@ -14,7 +14,7 @@ gulp.task 'sass', ->
   ]
     .pipe plumber()
     .pipe sass
-      includePaths: bourbon.includePaths
+      includePaths: neat.includePaths
       indentedSyntax: true
       onError: (err) ->
         console.error err.message
