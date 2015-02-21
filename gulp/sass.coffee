@@ -2,7 +2,9 @@
 
 gulp = require 'gulp'
 
-plumber = require 'gulp-plumber'
+plumber   = require 'gulp-plumber'
+notifier  = require 'node-notifier'
+
 sass = require 'gulp-sass'
 bourbon = require 'node-bourbon'
 
@@ -14,5 +16,10 @@ gulp.task 'sass', ->
     .pipe sass
       includePaths: bourbon.includePaths
       indentedSyntax: true
-      errLogToConsole: true
+      onError: (err) ->
+        console.error err.message
+        notifier.notify
+          title: '[webpack]'
+          message: err.message
+          sound: true
     .pipe gulp.dest './app/styles/'
