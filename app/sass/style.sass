@@ -1,13 +1,41 @@
 /*
   # style.sass
-  rootとなるファイル  
-  importしか記述しない
+  root。importで構成
+  */
+
+/*
+  # config
+  変数を定義。すべてのファイルで利用
   */
 
 @import 'config'
 
+/*
+  # 汎用ライブラリ 
+  mixinsにはburbonを読込
+  */
+
+@import 'functions'
+@import 'mixins'
+@import 'motions'
+
+/*
+  # カテゴリファイル 
+  smaccsに沿い構成  
+  modulesはBEMを採用 
+  */
+
 @import 'base'
-@import 'layout/index'
-@import 'module/index'
 @import 'state'
 @import 'theme'
+@import 'layouts/index'
+@import 'modules/index'
+
+/*
+  # その他
+  * pages - 各ページ独自のクラス
+  * components - reactjs用
+  */
+
+@import 'pages/index'
+@import 'components/index'
