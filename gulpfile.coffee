@@ -13,6 +13,7 @@ gulp.task 'default', [
   'cjsx'
   'coffee'
   'webpack'
+  'yuidoc'
   'karma'
 ]
 
