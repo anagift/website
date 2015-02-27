@@ -26,7 +26,7 @@ gulp.task 'watch', ->
     './app/src/**/*.coffee'
     './app/src/**/*.cjsx'
     './app/views/**/*.html'
-  ], ['webpack']
+  ], ['webpack', 'yuidoc']
   .on 'change', (event) ->
     event.path + ' was ' + event.type
 
