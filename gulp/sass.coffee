@@ -3,14 +3,16 @@
 gulp = require 'gulp'
 
 plumber   = require 'gulp-plumber'
+docco     = require 'gulp-styledocco'
 notifier  = require 'node-notifier'
+prefixer  = require 'gulp-autoprefixer'
 
 sass = require 'gulp-sass'
 neat = require 'node-neat'
 
 gulp.task 'sass', ->
   gulp.src [
-    './app/sass/**/*.sass'
+    './app/sass/**/*sass'
   ]
     .pipe plumber()
     .pipe sass
@@ -22,4 +24,8 @@ gulp.task 'sass', ->
           title: '[webpack]'
           message: err.message
           sound: true
+    .pipe prefixer()
+    .pipe docco
+      out: './app/docs/css/'
+      name: 'CSS'
     .pipe gulp.dest './app/styles/'

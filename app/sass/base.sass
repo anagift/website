@@ -1,3 +1,22 @@
+/*
+  # base.sass
+  要素直接に影響を与えるスタイルを定義
+  */
+
+/*
+  # import
+  configを読込  
+  normalize.cssはbase.sassに記述
+  */
+
 @import 'config'
 
-/* base */
+@import 'normalize'
+
+/*
+  # box-sizing
+  すべての要素はborder-boxが基準となる
+  */
+
+*, ::after, ::before
+  box-sizing: border-box
