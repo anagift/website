@@ -3,7 +3,7 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ./
+cd ~/projects/anagift/project/apps/www.anagift.com
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -33,11 +33,22 @@ badd +1 db.sql
 badd +1 ~/dotfiles/vimfiles/doc/log_sass.txt
 badd +1 ~/dotfiles/vimfiles/doc/log_db.txt
 badd +1 app/sass/functions.sass
-badd +1 app/sass
+badd +1 app/sass/config.sass
+badd +1 app/sass/motions.sass
+badd +1 app/sass/layout/index.sass
+badd +1 app/sass/module/index.sass
+badd +1 app/src/directives/oneway.coffee
+badd +1 app/src/controllers/oneway.coffee
+badd +1 app/src/components/twoway.cjsx
+badd +1 app/src/directives/twoway.coffee
+badd +1 app/src/controllers/twoway.coffee
+badd +1 app/views/oneway.html
+badd +1 app/views/twoway.html
+badd +0 app/views/pages/oneway.html
 argglobal
 silent! argdel *
 set stal=2
-edit app/src/components/sample.cjsx
+edit app/src
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -117,7 +128,6 @@ exe 'vert 13resize ' . ((&columns * 60 + 136) / 272)
 exe '14resize ' . ((&lines * 54 + 36) / 73)
 exe 'vert 14resize ' . ((&columns * 60 + 136) / 272)
 argglobal
-enew
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -126,7 +136,13 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-lcd ./
+let s:l = 8 - ((6 * winheight(0) + 31) / 62)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+8
+normal! 0
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
 enew
@@ -138,9 +154,10 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
+edit ~/projects/anagift/project/apps/www.anagift.com/app/src/components/twoway.cjsx
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -155,10 +172,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/src/directives/sample.coffee
+edit ~/projects/anagift/project/apps/www.anagift.com/app/src/directives/twoway.coffee
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -173,10 +190,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/src/controllers/sample.coffee
+edit ~/projects/anagift/project/apps/www.anagift.com/app/src/controllers/twoway.coffee
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -191,10 +208,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/src/directives/main.coffee
+edit ~/projects/anagift/project/apps/www.anagift.com/app/src/directives/oneway.coffee
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -209,10 +226,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/src/controllers/main.coffee
+edit ~/projects/anagift/project/apps/www.anagift.com/app/src/controllers/oneway.coffee
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -227,10 +244,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/src/config/route.coffee
+edit ~/projects/anagift/project/apps/www.anagift.com/app/src/config/route.coffee
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -245,10 +262,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/src/app.coffee
+edit ~/projects/anagift/project/apps/www.anagift.com/app/src/app.coffee
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -263,10 +280,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./\[quickrun\ output]
+edit ~/projects/anagift/project/apps/www.anagift.com/\[quickrun\ output]
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -281,10 +298,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/views/main.html
+edit ~/projects/anagift/project/apps/www.anagift.com/app/views/pages/oneway.html
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -299,10 +316,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/index.html
+edit ~/projects/anagift/project/apps/www.anagift.com/app/index.html
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -317,10 +334,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./notes.md
+edit ~/projects/anagift/project/apps/www.anagift.com/notes.md
 setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -329,11 +346,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 7) / 15)
+let s:l = 24 - ((14 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+24
 normal! 0
 wincmd w
 argglobal
@@ -353,7 +370,6 @@ normal! zt
 1
 normal! 0
 wincmd w
-2wincmd w
 exe '1resize ' . ((&lines * 62 + 36) / 73)
 exe 'vert 1resize ' . ((&columns * 20 + 136) / 272)
 exe '2resize ' . ((&lines * 7 + 36) / 73)
@@ -382,7 +398,7 @@ exe '13resize ' . ((&lines * 15 + 36) / 73)
 exe 'vert 13resize ' . ((&columns * 60 + 136) / 272)
 exe '14resize ' . ((&lines * 54 + 36) / 73)
 exe 'vert 14resize ' . ((&columns * 60 + 136) / 272)
-tabedit ./app/sass
+tabedit ~/projects/anagift/project/apps/www.anagift.com/app/sass
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -418,7 +434,10 @@ wincmd _ | wincmd |
 split
 wincmd _ | wincmd |
 split
-3wincmd k
+wincmd _ | wincmd |
+split
+4wincmd k
+wincmd w
 wincmd w
 wincmd w
 wincmd w
@@ -445,32 +464,34 @@ exe '2resize ' . ((&lines * 7 + 36) / 73)
 exe 'vert 2resize ' . ((&columns * 20 + 136) / 272)
 exe '3resize ' . ((&lines * 15 + 36) / 73)
 exe 'vert 3resize ' . ((&columns * 60 + 136) / 272)
-exe '4resize ' . ((&lines * 12 + 36) / 73)
+exe '4resize ' . ((&lines * 11 + 36) / 73)
 exe 'vert 4resize ' . ((&columns * 60 + 136) / 272)
 exe '5resize ' . ((&lines * 13 + 36) / 73)
 exe 'vert 5resize ' . ((&columns * 60 + 136) / 272)
-exe '6resize ' . ((&lines * 13 + 36) / 73)
+exe '6resize ' . ((&lines * 14 + 36) / 73)
 exe 'vert 6resize ' . ((&columns * 60 + 136) / 272)
 exe '7resize ' . ((&lines * 13 + 36) / 73)
 exe 'vert 7resize ' . ((&columns * 60 + 136) / 272)
 exe '8resize ' . ((&lines * 15 + 36) / 73)
 exe 'vert 8resize ' . ((&columns * 60 + 136) / 272)
-exe '9resize ' . ((&lines * 19 + 36) / 73)
+exe '9resize ' . ((&lines * 11 + 36) / 73)
 exe 'vert 9resize ' . ((&columns * 60 + 136) / 272)
-exe '10resize ' . ((&lines * 17 + 36) / 73)
+exe '10resize ' . ((&lines * 13 + 36) / 73)
 exe 'vert 10resize ' . ((&columns * 60 + 136) / 272)
-exe '11resize ' . ((&lines * 16 + 36) / 73)
+exe '11resize ' . ((&lines * 14 + 36) / 73)
 exe 'vert 11resize ' . ((&columns * 60 + 136) / 272)
-exe '12resize ' . ((&lines * 15 + 36) / 73)
-exe 'vert 12resize ' . ((&columns * 68 + 136) / 272)
-exe '13resize ' . ((&lines * 31 + 36) / 73)
+exe '12resize ' . ((&lines * 13 + 36) / 73)
+exe 'vert 12resize ' . ((&columns * 60 + 136) / 272)
+exe '13resize ' . ((&lines * 15 + 36) / 73)
 exe 'vert 13resize ' . ((&columns * 68 + 136) / 272)
-exe '14resize ' . ((&lines * 22 + 36) / 73)
+exe '14resize ' . ((&lines * 31 + 36) / 73)
 exe 'vert 14resize ' . ((&columns * 68 + 136) / 272)
-exe '15resize ' . ((&lines * 15 + 36) / 73)
-exe 'vert 15resize ' . ((&columns * 60 + 136) / 272)
-exe '16resize ' . ((&lines * 54 + 36) / 73)
+exe '15resize ' . ((&lines * 22 + 36) / 73)
+exe 'vert 15resize ' . ((&columns * 68 + 136) / 272)
+exe '16resize ' . ((&lines * 15 + 36) / 73)
 exe 'vert 16resize ' . ((&columns * 60 + 136) / 272)
+exe '17resize ' . ((&lines * 54 + 36) / 73)
+exe 'vert 17resize ' . ((&columns * 60 + 136) / 272)
 argglobal
 setlocal fdm=marker
 setlocal fde=0
@@ -480,13 +501,13 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 31) / 62)
+let s:l = 14 - ((13 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+14
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
 enew
@@ -498,10 +519,10 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/sass/motion.sass
+edit ~/projects/anagift/project/apps/www.anagift.com/app/sass/base.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -516,10 +537,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/sass/functions.sass
+edit ~/projects/anagift/project/apps/www.anagift.com/app/sass/layout/index.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -528,34 +549,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 6) / 12)
+let s:l = 1 - ((0 * winheight(0) + 5) / 11)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/sass/mixins.sass
-setlocal fdm=marker
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 6) / 13)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ./
-wincmd w
-argglobal
-edit ./app/sass/module.sass
+edit ~/projects/anagift/project/apps/www.anagift.com/app/sass/module/index.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -570,10 +573,28 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/sass/state.sass
+edit ~/projects/anagift/project/apps/www.anagift.com/app/sass/state.sass
+setlocal fdm=marker
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 1 - ((0 * winheight(0) + 7) / 14)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/projects/anagift/project/apps/www.anagift.com
+wincmd w
+argglobal
+edit ~/projects/anagift/project/apps/www.anagift.com/app/sass/theme.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -588,10 +609,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/sass/theme.sass
+edit ~/projects/anagift/project/apps/www.anagift.com/app/sass/mixins.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -606,10 +627,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/sass/layout.sass
+edit ~/projects/anagift/project/apps/www.anagift.com/app/sass/functions.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -618,16 +639,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 9) / 19)
+let s:l = 1 - ((0 * winheight(0) + 5) / 11)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/sass/style.sass
+edit ~/projects/anagift/project/apps/www.anagift.com/app/sass/motions.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -636,16 +657,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 8) / 17)
+let s:l = 1 - ((0 * winheight(0) + 6) / 13)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/sass/base.sass
+edit ~/projects/anagift/project/apps/www.anagift.com/app/sass/config.sass
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -654,16 +675,34 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 8) / 16)
+let s:l = 1 - ((0 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./\[quickrun\ output]
+edit ~/projects/anagift/project/apps/www.anagift.com/app/sass/style.sass
+setlocal fdm=marker
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 1 - ((0 * winheight(0) + 6) / 13)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/projects/anagift/project/apps/www.anagift.com
+wincmd w
+argglobal
+edit ~/projects/anagift/project/apps/www.anagift.com/\[quickrun\ output]
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -678,10 +717,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/views/main.html
+edit ~/projects/anagift/project/apps/www.anagift.com/app/views/pages/oneway.html
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -696,10 +735,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./app/index.html
+edit ~/projects/anagift/project/apps/www.anagift.com/app/index.html
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -714,10 +753,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./notes.md
+edit ~/projects/anagift/project/apps/www.anagift.com/notes.md
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -726,13 +765,13 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 7) / 15)
+let s:l = 24 - ((14 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+24
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
 edit ~/dotfiles/vimfiles/doc/log_sass.txt
@@ -750,42 +789,44 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
-2wincmd w
+3wincmd w
 exe '1resize ' . ((&lines * 62 + 36) / 73)
 exe 'vert 1resize ' . ((&columns * 20 + 136) / 272)
 exe '2resize ' . ((&lines * 7 + 36) / 73)
 exe 'vert 2resize ' . ((&columns * 20 + 136) / 272)
 exe '3resize ' . ((&lines * 15 + 36) / 73)
 exe 'vert 3resize ' . ((&columns * 60 + 136) / 272)
-exe '4resize ' . ((&lines * 12 + 36) / 73)
+exe '4resize ' . ((&lines * 11 + 36) / 73)
 exe 'vert 4resize ' . ((&columns * 60 + 136) / 272)
 exe '5resize ' . ((&lines * 13 + 36) / 73)
 exe 'vert 5resize ' . ((&columns * 60 + 136) / 272)
-exe '6resize ' . ((&lines * 13 + 36) / 73)
+exe '6resize ' . ((&lines * 14 + 36) / 73)
 exe 'vert 6resize ' . ((&columns * 60 + 136) / 272)
 exe '7resize ' . ((&lines * 13 + 36) / 73)
 exe 'vert 7resize ' . ((&columns * 60 + 136) / 272)
 exe '8resize ' . ((&lines * 15 + 36) / 73)
 exe 'vert 8resize ' . ((&columns * 60 + 136) / 272)
-exe '9resize ' . ((&lines * 19 + 36) / 73)
+exe '9resize ' . ((&lines * 11 + 36) / 73)
 exe 'vert 9resize ' . ((&columns * 60 + 136) / 272)
-exe '10resize ' . ((&lines * 17 + 36) / 73)
+exe '10resize ' . ((&lines * 13 + 36) / 73)
 exe 'vert 10resize ' . ((&columns * 60 + 136) / 272)
-exe '11resize ' . ((&lines * 16 + 36) / 73)
+exe '11resize ' . ((&lines * 14 + 36) / 73)
 exe 'vert 11resize ' . ((&columns * 60 + 136) / 272)
-exe '12resize ' . ((&lines * 15 + 36) / 73)
-exe 'vert 12resize ' . ((&columns * 68 + 136) / 272)
-exe '13resize ' . ((&lines * 31 + 36) / 73)
+exe '12resize ' . ((&lines * 13 + 36) / 73)
+exe 'vert 12resize ' . ((&columns * 60 + 136) / 272)
+exe '13resize ' . ((&lines * 15 + 36) / 73)
 exe 'vert 13resize ' . ((&columns * 68 + 136) / 272)
-exe '14resize ' . ((&lines * 22 + 36) / 73)
+exe '14resize ' . ((&lines * 31 + 36) / 73)
 exe 'vert 14resize ' . ((&columns * 68 + 136) / 272)
-exe '15resize ' . ((&lines * 15 + 36) / 73)
-exe 'vert 15resize ' . ((&columns * 60 + 136) / 272)
-exe '16resize ' . ((&lines * 54 + 36) / 73)
+exe '15resize ' . ((&lines * 22 + 36) / 73)
+exe 'vert 15resize ' . ((&columns * 68 + 136) / 272)
+exe '16resize ' . ((&lines * 15 + 36) / 73)
 exe 'vert 16resize ' . ((&columns * 60 + 136) / 272)
-tabedit ./db.sql
+exe '17resize ' . ((&lines * 54 + 36) / 73)
+exe 'vert 17resize ' . ((&columns * 60 + 136) / 272)
+tabedit ~/projects/anagift/project/apps/www.anagift.com/db.sql
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -819,10 +860,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
-edit ./notes.md
+edit ~/projects/anagift/project/apps/www.anagift.com/notes.md
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -837,7 +878,7 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
 argglobal
 edit ~/dotfiles/vimfiles/doc/log_db.txt
@@ -855,15 +896,15 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ./
+lcd ~/projects/anagift/project/apps/www.anagift.com
 wincmd w
-2wincmd w
+3wincmd w
 exe 'vert 1resize ' . ((&columns * 211 + 136) / 272)
 exe '2resize ' . ((&lines * 15 + 36) / 73)
 exe 'vert 2resize ' . ((&columns * 60 + 136) / 272)
 exe '3resize ' . ((&lines * 54 + 36) / 73)
 exe 'vert 3resize ' . ((&columns * 60 + 136) / 272)
-tabnext 1
+tabnext 2
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
