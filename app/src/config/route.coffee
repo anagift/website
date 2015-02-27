@@ -1,5 +1,19 @@
 'use strict'
 
+###*
+ # config
+ # @class config
+
+ * @ngdoc function
+ * @name app.config
+ * 
+ * @description
+ * angularJSのroute
+ * ngRouteを使用
+ * 
+ * @example
+###
+
 app = angular.module 'app'
 
 app.config [
@@ -9,19 +23,19 @@ app.config [
 
     $routeProvider
       .when '/',
-        templateUrl: 'views/top.html'
-        controller: 'MainCtrl'
+        templateUrl: 'views/pages/oneway.html'
+        controller: 'OnewayCtrl'
 
-      .when '/sample',
-        templateUrl: 'views/sample.html'
-        controller: 'MainCtrl'
+      .when '/twoway',
+        templateUrl: 'views/pages/twoway.html'
+        controller: 'OnewayCtrl'
 
       .when '/angular',
-        templateUrl: 'views/angular.html'
+        templateUrl: 'views/components/angular.html'
         controller: 'BenchMark'
 
       .when '/react',
-        templateUrl: 'views/react.html'
+        templateUrl: 'views/components/react.html'
         controller: 'BenchMark'
 
       .otherwise

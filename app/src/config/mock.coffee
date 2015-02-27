@@ -1,5 +1,19 @@
 'use strict'
 
+###*
+ # run
+ # @class run
+
+ * @ngdoc directive
+ * @name app.run
+ * 
+ * @description
+ * mockとfactory読込のサンプルのmock
+ * userList Objectを設定 
+ * 
+ * @example
+###
+
 app = angular.module 'app'
 
 app.run ($httpBackend) ->

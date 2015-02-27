@@ -1,5 +1,10 @@
 'use strict'
 
+###*
+ # This module contains classes for runnnig App.
+ # @module App
+###
+
 require 'angular'
 require 'angular-route'
 require 'angular-resource'
@@ -16,13 +21,16 @@ require './config/route'
 require './config/mock'
 
 # controllers
-require './controllers/main'
-require './controllers/user'
-require './controllers/sample'
+require './controllers/oneway'
+require './controllers/twoway'
 require './controllers/benchmark'
+require './controllers/user'
 
 # directives
-require './directives/main'
-require './directives/sample'
+require './directives/oneway'
+require './directives/twoway'
 require './directives/benchmark'
+require './directives/nav'
+
+# service
 require './services/user'

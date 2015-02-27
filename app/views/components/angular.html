@@ -1,0 +1,16 @@
+  <div ng-controller="BenchMark">
+    <p>* Each child..のエラーが表示されるが無視</p>
+    <button ng-click="refresh()">Refresh Data</button>
+
+    <!--ng-bench-mark data="data"></ng-benck-mark-->
+
+    <table>
+      <tr ng-repeat="line in data" ng-click="clickHandler(ev)">
+        <td>{{line[0]}}</td>
+        <td>{{line[1]}}</td>
+        <td>{{line[2]}}</td>
+        <td>{{line[3]}}</td>
+        <td>{{line[4]}}</td>
+      </tr>
+    </table>
+  </div>
