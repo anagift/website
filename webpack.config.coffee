@@ -5,6 +5,9 @@ webpack = require 'webpack'
 
 module.exports =
   resolve:
+    alias:
+      'angular-ui-router': 'angular-ui-router/release/angular-ui-router'
+
     extensions: [
       '',
       '.js',
