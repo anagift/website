@@ -21,11 +21,16 @@ gulp.task 'sass', ->
       onError: (err) ->
         console.error err.message
         notifier.notify
-          title: '[webpack]'
+          title: '[sass]'
           message: err.message
           sound: true
     .pipe prefixer()
-    .pipe docco
-      out: './app/docs/css/'
-      name: 'CSS'
     .pipe gulp.dest './app/styles/'
+
+  gulp.src [
+    './app/sass/**/*sass'
+  ]
+  .pipe docco
+    out: './app/docs/css/'
+    name: 'CSS'
+  .pipe gulp.dest './app/docs/css/'
