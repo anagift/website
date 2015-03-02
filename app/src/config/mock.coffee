@@ -16,7 +16,7 @@
 
 app = angular.module 'app'
 
-app.run ($httpBackend) ->
+app.run [ '$httpBackend', ($httpBackend) ->
   $httpBackend.whenGET(/^views\.*/).passThrough()
 
   userList = [
@@ -24,4 +24,5 @@ app.run ($httpBackend) ->
     { name: "userB", total: 2000 }
   ]
 
-  $httpBackend.whenGET('/users/').respond userList
+  $httpBackend.whenGET('user/list').respond userList
+]

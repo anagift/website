@@ -17,7 +17,6 @@
 app = angular.module 'app'
 
 app.controller 'TwowayCtrl', [
-  '$scope',
-  ($scope) ->
+  '$scope', ($scope) ->
     $scope.value = 'type here'
 ]

@@ -1,11 +1,11 @@
 'use strict'
 
 ###*
- # UserCtrl
- # @class UserCtrl
+ # UsersCtrl
+ # @class UsersCtrl
   
  * @ngdoc controller
- * @name app.controller:UserCtrl
+ * @name app.controller:UsersCtrl
  *
  * @description
  * mockとfactory読込のサンプルのcontroller
@@ -16,7 +16,7 @@
 
 app = angular.module 'app'
 
-app.controller 'UserCtrl', [
+app.controller 'UsersCtrl', [
   '$scope', '$resource', 'userList',
   ($scope, $resource, userList) ->
     userList.query (res) ->

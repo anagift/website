@@ -22,7 +22,7 @@ TWOWAY = React.createFactory require '../components/twoway'
 
 app.directive 'ngTwoway', ->
 
-  restrict: 'E'
+  restrict: 'A'
   scope:
     value: '='
   link: (scope, el, attrs) ->

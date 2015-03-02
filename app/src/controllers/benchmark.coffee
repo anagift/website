@@ -16,7 +16,7 @@
 
 app = angular.module 'app'
 
-app.controller 'BenchMark', [
+app.controller 'BenchmarkCtrl', [
   '$scope','$resource'
   ($scope, $resource) ->
     $scope.data = []

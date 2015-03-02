@@ -17,27 +17,51 @@
 app = angular.module 'app'
 
 app.config [
-  '$routeProvider', '$locationProvider',
-  ($routeProvider, $locationProvider) ->
+  '$locationProvider', '$stateProvider', '$urlRouterProvider',
+  ($locationProvider, $stateProvider, $urlRouterProvider) ->
+
     $locationProvider.html5Mode true
+    $urlRouterProvider.otherwise '/'
 
-    $routeProvider
-      .when '/',
+    $stateProvider
+      .state '/',
+        url: '/'
+        templateUrl: 'views/pages/top.html'
+        data:
+          pageTitle: 'home'
+
+      .state 'oneway',
+        url: '/oneway'
+        controller: 'OnewayCtrl'
         templateUrl: 'views/pages/oneway.html'
-        controller: 'OnewayCtrl'
+        data:
+          pageTitle: 'oneway'
 
-      .when '/twoway',
+      .state 'twoway',
+        url: '/twoway'
+        controller: 'TwowayCtrl'
         templateUrl: 'views/pages/twoway.html'
-        controller: 'OnewayCtrl'
+        data:
+          pageTitle: 'twoway'
 
-      .when '/angular',
+      .state 'users',
+        url: '/users'
+        controller: 'UsersCtrl'
+        templateUrl: 'views/pages/users.html'
+        data:
+          pageTitle: 'users'
+
+      .state 'angular',
+        url: '/benchmark/angular'
+        controller: 'BenchmarkCtrl'
         templateUrl: 'views/components/angular.html'
-        controller: 'BenchMark'
+        data:
+          pageTitle: 'benckmark.angular'
 
-      .when '/react',
+      .state 'react',
+        url: '/benchmark/react'
+        controller: 'BenchmarkCtrl'
         templateUrl: 'views/components/react.html'
-        controller: 'BenchMark'
-
-      .otherwise
-        redirectTo: '/'
+        data:
+          pageTitle: 'benckmark.react'
 ]
