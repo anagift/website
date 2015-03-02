@@ -1,10 +1,11 @@
 # @cjsx React.DOM
+
 'use strict'
 
 React = require 'react/addons'
 
 module.exports = React.createClass
-  displayName: 'SAMPLE'
+  displayName: 'TWOWAY'
   render: ->
     <div>
       Render by ReactJs 

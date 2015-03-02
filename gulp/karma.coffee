@@ -4,8 +4,8 @@ gulp = require 'gulp'
 
 karma = require 'karma'
 
-gulp.task 'karma', (done) ->
-  karma.server.start {
-    configFile: process.cwd() + '/karma.conf.coffee'
-  }, ->
-    done()
+karma_config = process.cwd() + '/karma.conf.coffee'
+
+gulp.task 'karma', ->
+  karma.server.start
+    configFile: karma_config
