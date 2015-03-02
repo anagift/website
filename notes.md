@@ -31,3 +31,10 @@ js angluar用にはngdocsというものがある
 js ngdocs記法を使いながらgheniというものでgenerateする
 js ただしcoffeescriptが使えない
 js 当面はyuidocでngdocs記法を取り入れながら記述
+ng titleタグを表示させるためにはng-controllerもhtmlタグに
+ng 初期ロード時の{{}}のちらつきはng-cloakのcssを追加
+ng titleタグはjs後に記述
+sass partial。変数を全ファイルで使用可。ファイル名にアンダーバー
+angular ブラウザのrefreshがだめ nginxにtry_filesだけでなくrewriteを追加
+angular ui-routerの導入
+
