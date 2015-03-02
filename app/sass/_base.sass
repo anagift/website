@@ -18,5 +18,56 @@
 *, ::after, ::before
   box-sizing: border-box
 
+/*
+  # html
+  基本を計算しやすいように62.5%に指定  
+  */
+
+html
+  font-size: 62.5%
+
+/*
+  # body
+  デフォルトではYuGothicを採用
+  */
+
 body
-  font-family: Helvetica, arial, YuGothic, '游ゴシック', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN', Meiryo, メイリオ, sans-serif
+  font-family: -Helvetica, arial, YuGothic, '游ゴシック', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN', Meiryo, メイリオ, sans-serif
+  webkit-font-smoothing: antialiased
+
+/*
+  # a
+  a:active,a:hoverの点線を消す
+  */
+
+a
+  &:active,
+  &:focus
+    outline: none
+
+/*
+  # img
+  imgは親スタイルの100%を超えないように
+  */
+
+img
+  margin: 0
+  max-width: 100%
+
+/*
+  # typegrapy
+  typegraphyは一度リセット
+  */
+
+h1, h2, h3, h4, h5, h6, p,
+dl, dt, dd, ul, ol, li
+  margin: 0
+  padding: 0
+
+/*
+  # ul, ol
+  style-typeを無効
+  */
+
+ul, ol
+  list-style-type: none
