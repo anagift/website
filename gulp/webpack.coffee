@@ -2,20 +2,26 @@
 
 gulp = require 'gulp'
 
-webpack = require 'webpack'
-gutil   = require 'gulp-util'
+webpack   = require 'webpack'
+gutil     = require 'gulp-util'
+notifier  = require 'node-notifier'
 
 webpack_config = require '../webpack.config.coffee'
 
-gulp.task 'webpack', (cb) ->
-  execWebpack webpack_config
-  cb()
+gulp.task 'webpack', ->
+  webpack webpack_config, (err, stats) ->
+    statsConfig = stats.toString
+      colors: true
+      chunks: false
+      hash: false
+      version: false
+      timings: false
+      assets: false
 
-execWebpack = (config) ->
-  webpack config, (err, stats) ->
-    # enable message log
-    # if (err) then throw new gutil.PluginError(
-    #   'webpack', err
-    # )
-    # gutil.log "[webpack]", stats.toString
-    #   color: true
+    if (statsConfig)
+      gutil.log '[webpack]', statsConfig
+
+    notifier.notify
+      titie: '[webpack]'
+      message: statsConfig
+      sound: true
