@@ -13,6 +13,7 @@ gulp.task 'default', [
   'cjsx'
   'coffee'
   'webpack'
+  'yuidoc'
   'karma'
 ]
 
@@ -26,10 +27,12 @@ gulp.task 'watch', ->
     './app/src/**/*.coffee'
     './app/src/**/*.cjsx'
     './app/views/**/*.html'
-  ], ['webpack']
+  ], ['webpack', 'yuidoc']
   .on 'change', (event) ->
     event.path + ' was ' + event.type
 
-  gulp.watch './app/sass/**/*', ['sass']
+  gulp.watch [
+    './app/sass/**/*'
+  ], ['sass']
     .on 'change', (event) ->
       event.path + ' was ' + event.type

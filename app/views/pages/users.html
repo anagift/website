@@ -1,0 +1,17 @@
+<p>users</p>
+
+<div>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>name</th>
+      <th>total</th>
+    </tr>
+
+    <tr ng-repeat="user in users">
+      <td>{{$index + 1}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.total * 1.08}}</td>
+    </tr>
+  </table>
+</div>

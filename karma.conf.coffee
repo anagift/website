@@ -15,11 +15,14 @@ module.exports = (config) ->
     frameworks: ['mocha', 'chai']
 
     files: [
+      #'../../bower_components/'
       './app/scripts/build.js'
       './test/spec/**/*_spec.coffee'
     ]
 
-    exclude: []
+    exclude: [
+      './app/scripts/app.js'
+    ]
 
     webpack: webpackConfig
 

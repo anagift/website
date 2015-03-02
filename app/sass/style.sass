@@ -1,18 +1,41 @@
-/* style */
+/*
+  # style.sass
+  root。importで構成
+  */
 
-@import 'normalize.sass'
+/*
+  # config
+  変数を定義。すべてのファイルで利用
+  */
 
-@import 'mixins'
+@import 'config'
+
+/*
+  # 汎用ライブラリ 
+  mixinsにはburbonを読込
+  */
+
 @import 'functions'
+@import 'mixins'
+@import 'motions'
+
+/*
+  # カテゴリファイル 
+  smaccsに沿い構成  
+  modulesはBEMを採用 
+  */
+
 @import 'base'
-@import 'layout'
-@import 'module'
+@import 'layouts/index'
+@import 'modules/index'
 @import 'state'
-@import 'motion'
 @import 'theme'
 
-// using sprite sprite-background(low,high,name)
-$icon: sprite-map('sprites/*.png')
-$retina: sprite-map('sprites-retina/*.png')
-$icon-url: sprite-url($icon)
-$retina-url: sprite-url($retina)
+/*
+  # その他
+  * pages - 各ページ独自のクラス
+  * components - reactjs用
+  */
+
+@import 'pages/index'
+@import 'components/index'
