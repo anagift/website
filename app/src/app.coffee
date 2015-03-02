@@ -1,24 +1,41 @@
 'use strict'
 
+###*
+ # This module contains classes for runnnig App.
+ # @module App
+###
+
 require 'angular'
 require 'angular-route'
+require 'angular-ui-router'
+require 'angular-resource'
+require 'angular-sanitize'
 require 'angular-mocks'
 
 module.exports = angular.module 'app', [
+  'ui.router'
   'ngRoute'
+  'ngResource'
+  'ngSanitize'
   'ngMockE2E'
 ]
 
 # config
-require './config/routes'
+require './config/route'
+require './config/mock'
 
 # controllers
-require './controllers/main'
-require './controllers/user'
-require './controllers/sample'
+require './controllers/oneway'
+require './controllers/twoway'
 require './controllers/benchmark'
+require './controllers/users'
 
 # directives
-require './directives/main'
-require './directives/sample'
+require './directives/pagetitle'
+require './directives/oneway'
+require './directives/twoway'
 require './directives/benchmark'
+require './directives/nav'
+
+# service
+require './services/user'
