@@ -1,6 +1,6 @@
 'use strict'
 
-describe 'MainCtrl [controllers/main.coffee]: ', ->
+describe 'OnewayCtrl [controllers/oneway.coffee]: ', ->
 
   scope = {}
   ctrl = {}
@@ -9,9 +9,9 @@ describe 'MainCtrl [controllers/main.coffee]: ', ->
 
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
-    ctrl = $controller 'MainCtrl', {$scope: scope}
+    ctrl = $controller 'OnewayCtrl', {$scope: scope}
 
-  it 'MainCtrlが存在していること', () ->
+  it 'OnewayCtrlが存在していること', () ->
     expect(ctrl).to.be.defined
 
   it 'scope.titleがwww.example.comであること', () ->
