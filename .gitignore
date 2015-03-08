@@ -8,4 +8,5 @@ app/scripts/*
 app/styles/*
 
 !.gitkeep
-!assets/icons/*.png
+!app/assets/images/sprites/sample/*
+!app/assets/icons/*.png
