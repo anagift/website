@@ -4,11 +4,13 @@ gulp = require 'gulp'
 
 require('require-dir')('./gulp')
 
+
 ##
 # default
 ##
 
 gulp.task 'default', [
+  'sprite'
   'sass'
   'cjsx'
   'coffee'
@@ -22,7 +24,6 @@ gulp.task 'default', [
 # watch
 ##
 
-gulp.task 'watch', ->
   gulp.watch [
     './app/src/**/*.coffee'
     './app/src/**/*.cjsx'
