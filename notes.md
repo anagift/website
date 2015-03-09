@@ -37,4 +37,7 @@ ng titleタグはjs後に記述
 sass partial。変数を全ファイルで使用可。ファイル名にアンダーバー
 angular ブラウザのrefreshがだめ nginxにtry_filesだけでなくrewriteを追加
 angular ui-routerの導入
-
+kibana4へ移行。kibana3のように静的では不可だったため専用コンテナを作成
+gulp.spritesmithの導入
+cssVarMapエラーがでるためspritesheet-templatesを直接編集
+mustashe記法を確認

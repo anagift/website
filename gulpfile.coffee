@@ -4,15 +4,19 @@ gulp = require 'gulp'
 
 require('require-dir')('./gulp')
 
+
 ##
 # default
 ##
 
 gulp.task 'default', [
+  'sprite'
+  'imagemin'
   'sass'
+  'csso'
   'cjsx'
   'coffee'
-  'webpack'
+  'webpack-min'
   'yuidoc'
   'karma'
 ]

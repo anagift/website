@@ -68,12 +68,18 @@ app/sass
 ├─ style.sass       // おおもととなるファイル
 └─ theme.sass       // 色、文字等を定義
 ```
-
 ## 命名規則
 * layoutは`l-`を先頭に付与する
 * state(状態)は`is-`か`has-`を先頭に付与する
 * idは使用不可
 * moduleは[BEM][l-07]の記述とあわせキャメルケースで記述する
+
+## sprite画像
+[gulp.spritesmith][l-08]を利用して生成  
+画像はapp/sass/spritesにxxxhdpi、4dpxで作成(通常の4倍)  
+mixinはsprite.sassに出力される  
+ひな形はapp/sass/sass.template.mustashe  
+[spritesheet-templates][l-09]でmustashe記法  
 
 
 
@@ -84,3 +90,5 @@ app/sass
 [l-05]: http://necolas.github.io/normalize.css/
 [l-06]: https://github.com/postcss/autoprefixer
 [l-07]: https://en.bem.info/
+[l-08]: https://github.com/twolfson/gulp.spritesmith
+[l-09]: https://github.com/twolfson/spritesheet-templates
