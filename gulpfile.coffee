@@ -16,7 +16,7 @@ gulp.task 'default', [
   'csso'
   'cjsx'
   'coffee'
-  'webpack'
+  'webpack-min'
   'yuidoc'
   'karma'
 ]
@@ -37,6 +37,6 @@ gulp.task 'watch', ->
 
   gulp.watch [
     './app/sass/**/*'
-  ], ['sass','csso']
+  ], ['sass']
     .on 'change', (event) ->
       event.path + ' was ' + event.type
