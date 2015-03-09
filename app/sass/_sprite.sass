@@ -1,0 +1,205 @@
+
+/*
+  # 変数一覧
+  本来はgulp/sprite.coffeeで変数のprefixをcssVarMapにて追加できるはずが、 
+  エラーが発生するため、以下に直書き。  
+  元のソースは、  
+  ../../node_modules/gulp.spritesmith/node_modules/spritesheet-templates/lib/templates/sass.template.mustache
+  
+  変更点はこのファイル内で以下のみ、  
+  items間の$strings.name_nameを$sprite-string.name_nameのようにsprite-を追加
+  */
+
+$sprite-icon01-name: 'sprite-icon01'
+$sprite-icon01-x: 0px
+$sprite-icon01-y: 0px
+$sprite-icon01-offset-x: 0px
+$sprite-icon01-offset-y: 0px
+$sprite-icon01-width: 128px
+$sprite-icon01-height: 128px
+$sprite-icon01-total-width: 256px
+$sprite-icon01-total-height: 256px
+$sprite-icon01-image: '/assets/images/sprite.png'
+$sprite-icon01: (0px, 0px, 0px, 0px, 128px, 128px, 256px, 256px, '/assets/images/sprite.png', 'sprite-icon01', )
+$sprite-icon02-name: 'sprite-icon02'
+$sprite-icon02-x: 128px
+$sprite-icon02-y: 0px
+$sprite-icon02-offset-x: -128px
+$sprite-icon02-offset-y: 0px
+$sprite-icon02-width: 128px
+$sprite-icon02-height: 128px
+$sprite-icon02-total-width: 256px
+$sprite-icon02-total-height: 256px
+$sprite-icon02-image: '/assets/images/sprite.png'
+$sprite-icon02: (128px, 0px, -128px, 0px, 128px, 128px, 256px, 256px, '/assets/images/sprite.png', 'sprite-icon02', )
+$sprite-icon03-name: 'sprite-icon03'
+$sprite-icon03-x: 0px
+$sprite-icon03-y: 128px
+$sprite-icon03-offset-x: 0px
+$sprite-icon03-offset-y: -128px
+$sprite-icon03-width: 128px
+$sprite-icon03-height: 128px
+$sprite-icon03-total-width: 256px
+$sprite-icon03-total-height: 256px
+$sprite-icon03-image: '/assets/images/sprite.png'
+$sprite-icon03: (0px, 128px, 0px, -128px, 128px, 128px, 256px, 256px, '/assets/images/sprite.png', 'sprite-icon03', )
+
+
+/*
+  # 出力されたsprite画像の変数
+  gulp/sprite.coffee内cssSpritesheetNameで指定
+  */
+
+$icon-width: 256px
+$icon-height: 256px
+$icon-image: '/assets/images/sprite.png'
+$icon-sprites: ($sprite-icon01, $sprite-icon02, $sprite-icon03, )
+$icon: (256px, 256px, '/assets/images/sprite.png', $icon-sprites, )
+
+
+
+
+/*
+  # オプションmixins
+  各spriteの値を取り出すmixin
+  
+  * sprite-width - widthを出力
+  * sprite-height - heightを出力
+  * sprite-position - positionを出力
+  * sprite-image - image, background-imageを出力
+  * sprite - 上記すべて
+
+  */
+
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+
+/*
+  # xhdpiに対応(retina)
+  2dpxに対応
+  */
+
+@mixin xhdpi-sprite-width($sprite)
+  width: nth($sprite, 5) / 2
+
+@mixin xhdpi-sprite-height($sprite)
+  height: nth($sprite, 6) / 2
+
+@mixin xhdpi-sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3) / 2
+  $sprite-offset-y: nth($sprite, 4) / 2
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin xhdpi-sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin xhdpi-sprite-size($sprite)
+  background-size: nth($sprite, 7) / 2 nth($sprite, 8) / 2
+
+@mixin xhdpi-sprite($sprite)
+  @include xhdpi-sprite-image($sprite)
+  @include xhdpi-sprite-position($sprite)
+  @include xhdpi-sprite-width($sprite)
+  @include xhdpi-sprite-height($sprite)
+  @include xhdpi-sprite-size($sprite)
+
+@mixin xhdpi-sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)
+
+
+/*
+  # xxhdpiに対応
+  3dpxに対応
+  */
+
+@mixin xxhdpi-sprite-width($sprite)
+  width: nth($sprite, 5) / 3
+
+@mixin xxhdpi-sprite-height($sprite)
+  height: nth($sprite, 6) / 3
+
+@mixin xxhdpi-sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3) / 3
+  $sprite-offset-y: nth($sprite, 4) / 3
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin xxhdpi-sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin xxhdpi-sprite-size($sprite)
+  background-size: nth($sprite, 7) / 3 nth($sprite, 8) / 3
+
+@mixin xxhdpi-sprite($sprite)
+  @include xxhdpi-sprite-image($sprite)
+  @include xxhdpi-sprite-position($sprite)
+  @include xxhdpi-sprite-width($sprite)
+  @include xxhdpi-sprite-height($sprite)
+  @include xxhdpi-sprite-size($sprite)
+
+
+/*
+  # xxxhdpiに対応
+  4dpxに対応
+  */
+
+@mixin xxxhdpi-sprite-width($sprite)
+  width: nth($sprite, 5) / 4
+
+@mixin xxxhdpi-sprite-height($sprite)
+  height: nth($sprite, 6) / 4
+
+@mixin xxxhdpi-sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3) / 4
+  $sprite-offset-y: nth($sprite, 4) / 4
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin xxxhdpi-sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin xxxhdpi-sprite-size($sprite)
+  background-size: nth($sprite, 7) / 4 nth($sprite, 8) / 4
+
+@mixin xxxhdpi-sprite($sprite)
+  @include xxxhdpi-sprite-image($sprite)
+  @include xxxhdpi-sprite-position($sprite)
+  @include xxxhdpi-sprite-width($sprite)
+  @include xxxhdpi-sprite-height($sprite)
+  @include xxxhdpi-sprite-size($sprite)
+
+
+/*
+  # 複数sprite出力 
+  idも付与。sassにより上書きされる
+  */
+
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)
+
