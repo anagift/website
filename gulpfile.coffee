@@ -12,6 +12,7 @@ require('require-dir')('./gulp')
 gulp.task 'default', [
   'sprite'
   'sass'
+  'csso'
   'cjsx'
   'coffee'
   'webpack'
@@ -24,6 +25,7 @@ gulp.task 'default', [
 # watch
 ##
 
+gulp.task 'watch', ->
   gulp.watch [
     './app/src/**/*.coffee'
     './app/src/**/*.cjsx'
@@ -34,6 +36,6 @@ gulp.task 'default', [
 
   gulp.watch [
     './app/sass/**/*'
-  ], ['sass']
+  ], ['sass','csso']
     .on 'change', (event) ->
       event.path + ' was ' + event.type
