@@ -10,17 +10,6 @@
   items間の$strings.name_nameを$sprite-string.name_nameのようにsprite-を追加
   */
 
-$sprite-remove-this-name: 'sprite-remove-this'
-$sprite-remove-this-x: 128px
-$sprite-remove-this-y: 128px
-$sprite-remove-this-offset-x: -128px
-$sprite-remove-this-offset-y: -128px
-$sprite-remove-this-width: 60px
-$sprite-remove-this-height: 30px
-$sprite-remove-this-total-width: 256px
-$sprite-remove-this-total-height: 256px
-$sprite-remove-this-image: '/assets/images/sprite.png'
-$sprite-remove-this: (128px, 128px, -128px, -128px, 60px, 30px, 256px, 256px, '/assets/images/sprite.png', 'sprite-remove-this', )
 $sprite-icon01-name: 'sprite-icon01'
 $sprite-icon01-x: 0px
 $sprite-icon01-y: 0px
@@ -64,7 +53,7 @@ $sprite-icon03: (0px, 128px, 0px, -128px, 128px, 128px, 256px, 256px, '/assets/i
 $icon-width: 256px
 $icon-height: 256px
 $icon-image: '/assets/images/sprite.png'
-$icon-sprites: ($sprite-remove-this, $sprite-icon01, $sprite-icon02, $sprite-icon03, )
+$icon-sprites: ($sprite-icon01, $sprite-icon02, $sprite-icon03, )
 $icon: (256px, 256px, '/assets/images/sprite.png', $icon-sprites, )
 
 
@@ -174,7 +163,7 @@ $icon: (256px, 256px, '/assets/images/sprite.png', $icon-sprites, )
 
 /*
   # xxxhdpiに対応
-  3dpxに対応
+  4dpxに対応
   */
 
 @mixin xxxhdpi-sprite-width($sprite)

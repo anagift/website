@@ -3,6 +3,7 @@
 gulp = require 'gulp'
 
 spritesmith = require 'gulp.spritesmith'
+changed     = require 'gulp-changed'
 
 gulp.task 'sprite', ->
 
@@ -25,7 +26,8 @@ gulp.task 'sprite', ->
 
   spriteData =
     gulp.src './app/assets/images/sprites/**/*.*'
+    .pipe changed('/app/assets/images/src/')
     .pipe spritesmith(spriteOption)
 
-  spriteData.img.pipe gulp.dest('./app/assets/images/')
+  spriteData.img.pipe gulp.dest('./app/assets/images/src/')
   spriteData.css.pipe gulp.dest('./app/sass/')

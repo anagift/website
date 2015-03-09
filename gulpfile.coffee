@@ -11,6 +11,7 @@ require('require-dir')('./gulp')
 
 gulp.task 'default', [
   'sprite'
+  'imagemin'
   'sass'
   'csso'
   'cjsx'
