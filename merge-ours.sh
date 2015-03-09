@@ -22,6 +22,3 @@ EOF
 else
   echo "\nalready exists merge ours in .git/config\n"
 fi
-
-gulp
-gulp e2e
