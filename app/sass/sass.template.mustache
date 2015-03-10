@@ -47,14 +47,20 @@ ${{spritesheet.strings.name}}: ({{spritesheet.px.width}}, {{spritesheet.px.heigh
 
 
 /*
-  # オプションmixins
-  各spriteの値を取り出すmixin
+  # sprite mixins
+  ## sprite mixin
+  任意の画像のみ出力するmixin
+
+  @include sprite($sprite-sample-red)
+
+  のように使用する
   
+  ## 各値を取り出すmixin
+
   * sprite-width - widthを出力
   * sprite-height - heightを出力
   * sprite-position - positionを出力
   * sprite-image - image, background-imageを出力
-  * sprite - 上記すべて
 
   */
 
@@ -180,8 +186,16 @@ ${{spritesheet.strings.name}}: ({{spritesheet.px.width}}, {{spritesheet.px.heigh
 
 
 /*
-  # 複数sprite出力 
-  idも付与。sassにより上書きされる
+  # sprites mixin
+  すべての画像を書き出すmixin
+  (sprite-+ファイル名がクラス名となる)
+
+  * spritesは予め配列を用意し、spritesの引数に入れる
+  * $sprites-spritesはデフォルトで用意されたすべてを含む配列
+    ($spritesはgulp/sprite.coffeeのcssSpritesheetNameの値)
+
+  $sprites: $sprite-sample-blue, $sprite-sample-black  
+  @include sprites($sprites-sprites)
   */
 
 @mixin sprites($sprites)
