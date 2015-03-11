@@ -9,14 +9,12 @@ require 'angular'
 require 'angular-route'
 require 'angular-ui-router'
 require 'angular-resource'
-require 'angular-sanitize'
 require 'angular-mocks'
 
 module.exports = angular.module 'app', [
   'ui.router'
   'ngRoute'
   'ngResource'
-  'ngSanitize'
   'ngMockE2E'
 ]
 
