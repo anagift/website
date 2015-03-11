@@ -6,6 +6,7 @@ app/coverage/*
 app/docs/*
 app/scripts/*
 app/styles/*
+app/sass/_sprite.sass
 
 !.gitkeep
 !app/assets/images/sprites/sample/*
