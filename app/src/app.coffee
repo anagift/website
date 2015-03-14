@@ -34,6 +34,7 @@ require './directives/oneway'
 require './directives/twoway'
 require './directives/benchmark'
 require './directives/nav'
+require './directives/grandnav'
 
 # service
 require './services/user'

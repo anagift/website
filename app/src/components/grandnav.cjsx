@@ -1,0 +1,56 @@
+# @cjsx React.DOM
+
+###*
+ # GRANDNAV 
+ # @class GRANDNAV
+  
+ * @ngdoc component
+ * @name app.components:GRANDNAV
+ *
+ * @description
+ * grandnav用のreactjs component
+ * onClickでfont-sizeがアニメーション
+ * アニメーションはcssのtransition
+ * 
+ * @example
+###
+
+'use strict'
+
+React = require 'react/addons'
+
+CSSTransitionGroup = React.addons.CSSTransitionGroup
+
+module.exports = React.createClass
+  displayName: 'GRANDNAV'
+
+  getInitialState: ->
+    value: 'initial'
+
+  onClick: ->
+    if @state.value == 'scene A'
+      value = 'scene B'
+    else
+      value = 'scene A'
+
+    @setState
+      value: value
+
+  render: ->
+    value =
+      <span className="sample" key={@state.value}>
+        {@state.value}
+      </span>
+
+    <div>
+      <button onClick={@onClick}>
+        click!
+      </button>
+
+      <CSSTransitionGroup
+        transitionName="sample"
+        transitionLeave=false
+        >
+        {value}
+      </CSSTransitionGroup>
+    </div>
