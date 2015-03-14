@@ -41,3 +41,7 @@ kibana4へ移行。kibana3のように静的では不可だったため専用コ
 gulp.spritesmithの導入
 cssVarMapエラーがでるためspritesheet-templatesを直接編集
 mustashe記法を確認
+gdbとcdgb
+node debug
+vim cjsxの対応に成功 vim-cjsxを使わない。coffee-reactとsyntaxを自作 
+react transition
