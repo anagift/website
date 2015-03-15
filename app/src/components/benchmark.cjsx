@@ -1,6 +1,17 @@
 # @cjsx React.DOM
 'use strict'
 
+###*
+ # BENCHMARK
+ # @class BENCHMARK
+  
+ * @description
+ * benchmarkページ用のReactJs component
+ * 1500*5の乱数をreactを使って表示
+ * 
+ * @example
+###
+
 React = require 'react/addons'
 
 module.exports = React.createClass

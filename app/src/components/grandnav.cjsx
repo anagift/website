@@ -1,4 +1,5 @@
 # @cjsx React.DOM
+'use strict'
 
 ###*
  # GRANDNAV 
@@ -14,8 +15,6 @@
  * 
  * @example
 ###
-
-'use strict'
 
 React = require 'react/addons'
 
