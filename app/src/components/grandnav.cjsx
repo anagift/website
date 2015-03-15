@@ -43,6 +43,8 @@ module.exports = React.createClass
       </span>
 
     <div>
+      <i className="icon-mobile"></i>
+
       <button onClick={@onClick}>
         click!
       </button>

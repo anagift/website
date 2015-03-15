@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
  @font-face {
-  font-family: 'anagift';
-  src: url('../font/anagift.eot?22813200');
-  src: url('../font/anagift.eot?22813200#iefix') format('embedded-opentype'),
-       url('../font/anagift.woff?22813200') format('woff'),
-       url('../font/anagift.ttf?22813200') format('truetype'),
-       url('../font/anagift.svg?22813200#anagift') format('svg');
+  font-family: 'icons';
+  src: url('../font/icons.eot?84236963');
+  src: url('../font/icons.eot?84236963#iefix') format('embedded-opentype'),
+       url('../font/icons.woff?84236963') format('woff'),
+       url('../font/icons.ttf?84236963') format('truetype'),
+       url('../font/icons.svg?84236963#icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,14 +15,14 @@
 /*
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
-    font-family: 'anagift';
-    src: url('../font/anagift.svg?22813200#anagift') format('svg');
+    font-family: 'icons';
+    src: url('../font/icons.svg?84236963#icons') format('svg');
   }
 }
 */
  
  [class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "anagift";
+  font-family: "icons";
   font-style: normal;
   font-weight: normal;
   speak: none;
