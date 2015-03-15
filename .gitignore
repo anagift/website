@@ -11,3 +11,4 @@ app/sass/_sprite.sass
 !.gitkeep
 !app/assets/images/sprites/sample/*
 !app/assets/icons/*.png
+!app/assets/fonts/fontello/*
