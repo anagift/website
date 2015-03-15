@@ -5,6 +5,9 @@
  # BENCHMARK
  # @class BENCHMARK
   
+ * @ngdoc component
+ * @name app.component:BENCHMARK
+ *
  * @description
  * benchmarkページ用のReactJs component
  * 1500*5の乱数をreactを使って表示

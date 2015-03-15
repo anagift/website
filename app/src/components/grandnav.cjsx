@@ -6,7 +6,7 @@
  # @class GRANDNAV
   
  * @ngdoc component
- * @name app.components:GRANDNAV
+ * @name app.component:GRANDNAV
  *
  * @description
  * grandnav用のreactjs component
