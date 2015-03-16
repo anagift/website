@@ -42,7 +42,7 @@ module.exports = React.createClass
       </span>
 
     <div>
-      <i className="icon-mobile"></i>
+      <i className="icon-arrows-ccw animate-spin"></i>
 
       <button onClick={@onClick}>
         click!

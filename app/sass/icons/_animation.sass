@@ -15,11 +15,12 @@
   * iconをする360度回転
   */
 
-.icon-animate-spin
+.animate-spin
+  display: inline-block
   @include animation(spin 2s infinite linear)
 
 @include keyframes(spin)
-  0%
-    @include transform(rotate(0deg))
-  100%
+  from
     @include transform(rotate(359deg))
+  to
+    @include transform(rotate(0deg))
