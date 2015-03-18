@@ -45,3 +45,11 @@ gdbとcdgb
 node debug
 vim cjsxの対応に成功 vim-cjsxを使わない。coffee-reactとsyntaxを自作 
 react transition
+sass &
+sass @at-root
+css3 inline-block float:leftの代わり
+css3 box-sizing border-box
+css3 display: table-cell ul,liの中央配置
+css  遊ゴシックをIEで文字選択するとbottomの方が広い
+css  遊ゴシックだと縦中央がIEで一緒にならない
+css  メイリオが安全
