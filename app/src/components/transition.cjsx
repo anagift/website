@@ -2,14 +2,14 @@
 'use strict'
 
 ###*
- # GRANDNAV 
- # @class GRANDNAV
+ # TRANSITION
+ # @class TRANSITION
   
  * @ngdoc component
- * @name app.component:GRANDNAV
+ * @name app.component:TRANSITION
  *
  * @description
- * grandnav用のreactjs component
+ * TRANSITION用のreactjs component
  * onClickでfont-sizeがアニメーション
  * アニメーションはcssのtransition
  * 
@@ -21,7 +21,7 @@ React = require 'react/addons'
 CSSTransitionGroup = React.addons.CSSTransitionGroup
 
 module.exports = React.createClass
-  displayName: 'GRANDNAV'
+  displayName: 'TRANSITION'
 
   getInitialState: ->
     value: 'initial'
@@ -37,7 +37,7 @@ module.exports = React.createClass
 
   render: ->
     value =
-      <span className="sample" key={@state.value}>
+      <span className="c-transition" key={@state.value}>
         {@state.value}
       </span>
 
@@ -49,7 +49,7 @@ module.exports = React.createClass
       </button>
 
       <CSSTransitionGroup
-        transitionName="sample"
+        transitionName="c-transition"
         transitionLeave=false
         >
         {value}

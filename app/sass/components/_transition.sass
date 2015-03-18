@@ -1,0 +1,27 @@
+/*
+  # components/transition.sass
+  react CssTransitionGruopに関するクラスの定義  
+  prefixには`c-`を付与
+  */
+
+/*
+  # reactjs cssTransitionGroup transition
+  ReactJsのcssTransitionGroupのサンプル
+  
+  * font-sizeがonClickでアニメーションする
+  * c-transition-enter, c-transition-leaveで初期値をcssで指定する
+  * -activeで変化を指定
+  
+  */
+
+.c-transition-enter
+  @include transition(1.5s, ease-in)
+
+.c-transition-enter.c-transition-enter-active
+  font-size: 80px
+
+.c-transition-leave
+  @include transition(1.5s, ease-out)
+
+.c-transition-leave.c-transition-leave-active
+  font-size: 10px

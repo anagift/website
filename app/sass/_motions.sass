@@ -11,25 +11,3 @@
   */
 
 @import 'bourbon'
-
-/*
-  # reactjs cssTransitionGroup sample
-  ReactJsのcssTransitionGroupのサンプル
-  
-  * font-sizeがonClickでアニメーションする
-  * sample-enter, sample-leaveで初期値をcssで指定する
-  * -activeで変化を指定
-  
-  */
-
-.sample-enter
-  @include transition(1.5s, ease-in)
-
-.sample-enter.sample-enter-active
-  font-size: 80px
-
-.sample-leave
-  @include transition(1.5s, ease-out)
-
-.sample-leave.sample-leave-active
-  font-size: 10px

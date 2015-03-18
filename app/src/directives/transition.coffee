@@ -1,15 +1,15 @@
 'use strict'
 
 ###*
- # ngGrandnav
- # @class ngGrandnav
+ # ngTransition
+ # @class ngTransition
 
  * @ngdoc directive
- * @name app.directive:ngGrandnav
+ * @name app.directive:ngTransition
  * @restrict A
  * 
  * @description
- * grandnavのdirective
+ * /transitionのdirective
  * reactjs cssTransitionGruopのサンプル含む
  * 
  * @example
@@ -18,10 +18,10 @@
 app = angular.module 'app'
 
 React = require 'react/addons'
-GRANDNAV = React.createFactory require '../components/grandnav'
+TRANSITION = React.createFactory require '../components/transition'
 
-app.directive 'ngGrandnav', ->
+app.directive 'ngTransition', ->
   restrict: 'A'
 
   compile: (el) ->
-    React.render GRANDNAV(), el[0]
+    React.render TRANSITION(), el[0]

@@ -6,7 +6,7 @@
 
  * @ngdoc directive
  * @name app.directive:ngTwoway
- * @restrict E
+ * @restrict A
  * 
  * @description
  * two way bindingのサンプルのdirective
@@ -23,9 +23,11 @@ TWOWAY = React.createFactory require '../components/twoway'
 app.directive 'ngTwoway', ->
 
   restrict: 'A'
+
   scope:
     value: '='
-  link: (scope, el, attrs) ->
+
+  link: (scope, el) ->
     scope.$watch 'value', (newValue, oldValue) ->
       React.render(
         TWOWAY({value:newValue})

@@ -29,12 +29,11 @@ require './controllers/benchmark'
 require './controllers/users'
 
 # directives
-require './directives/pagetitle'
-require './directives/oneway'
-require './directives/twoway'
-require './directives/benchmark'
+require './directives/title'
 require './directives/nav'
-require './directives/grandnav'
+require './directives/twoway'
+require './directives/transition'
+require './directives/benchmark'
 
 # service
 require './services/user'
