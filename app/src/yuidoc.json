@@ -12,7 +12,7 @@
     "selleck": false,
     "parseOnly": false,
     "syntaxtype": "coffee",
-    "extension": ".coffee",
+    "extension": ".coffee,.cjsx",
     "paths": "app/src",
     "outdir": "app/docs/js",
     "preprocessor": "../../node_modules/yuidoc-die-on-warnings/yuidoc-die-on-warnings.js"

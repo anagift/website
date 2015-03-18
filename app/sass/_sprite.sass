@@ -10,39 +10,39 @@
   items間の$strings.name_nameを$sprite-string.name_nameのようにsprite-を追加
   */
 
-$sprite-icon01-name: 'sprite-icon01'
-$sprite-icon01-x: 0px
-$sprite-icon01-y: 0px
-$sprite-icon01-offset-x: 0px
-$sprite-icon01-offset-y: 0px
-$sprite-icon01-width: 128px
-$sprite-icon01-height: 128px
-$sprite-icon01-total-width: 256px
-$sprite-icon01-total-height: 256px
-$sprite-icon01-image: '/assets/images/sprite.png'
-$sprite-icon01: (0px, 0px, 0px, 0px, 128px, 128px, 256px, 256px, '/assets/images/sprite.png', 'sprite-icon01', )
-$sprite-icon02-name: 'sprite-icon02'
-$sprite-icon02-x: 128px
-$sprite-icon02-y: 0px
-$sprite-icon02-offset-x: -128px
-$sprite-icon02-offset-y: 0px
-$sprite-icon02-width: 128px
-$sprite-icon02-height: 128px
-$sprite-icon02-total-width: 256px
-$sprite-icon02-total-height: 256px
-$sprite-icon02-image: '/assets/images/sprite.png'
-$sprite-icon02: (128px, 0px, -128px, 0px, 128px, 128px, 256px, 256px, '/assets/images/sprite.png', 'sprite-icon02', )
-$sprite-icon03-name: 'sprite-icon03'
-$sprite-icon03-x: 0px
-$sprite-icon03-y: 128px
-$sprite-icon03-offset-x: 0px
-$sprite-icon03-offset-y: -128px
-$sprite-icon03-width: 128px
-$sprite-icon03-height: 128px
-$sprite-icon03-total-width: 256px
-$sprite-icon03-total-height: 256px
-$sprite-icon03-image: '/assets/images/sprite.png'
-$sprite-icon03: (0px, 128px, 0px, -128px, 128px, 128px, 256px, 256px, '/assets/images/sprite.png', 'sprite-icon03', )
+$sprite-sample-black-name: 'sprite-sample-black'
+$sprite-sample-black-x: 0px
+$sprite-sample-black-y: 0px
+$sprite-sample-black-offset-x: 0px
+$sprite-sample-black-offset-y: 0px
+$sprite-sample-black-width: 128px
+$sprite-sample-black-height: 128px
+$sprite-sample-black-total-width: 256px
+$sprite-sample-black-total-height: 256px
+$sprite-sample-black-image: '/assets/images/sprite.png'
+$sprite-sample-black: (0px, 0px, 0px, 0px, 128px, 128px, 256px, 256px, '/assets/images/sprite.png', 'sprite-sample-black', )
+$sprite-sample-blue-name: 'sprite-sample-blue'
+$sprite-sample-blue-x: 128px
+$sprite-sample-blue-y: 0px
+$sprite-sample-blue-offset-x: -128px
+$sprite-sample-blue-offset-y: 0px
+$sprite-sample-blue-width: 128px
+$sprite-sample-blue-height: 128px
+$sprite-sample-blue-total-width: 256px
+$sprite-sample-blue-total-height: 256px
+$sprite-sample-blue-image: '/assets/images/sprite.png'
+$sprite-sample-blue: (128px, 0px, -128px, 0px, 128px, 128px, 256px, 256px, '/assets/images/sprite.png', 'sprite-sample-blue', )
+$sprite-sample-red-name: 'sprite-sample-red'
+$sprite-sample-red-x: 0px
+$sprite-sample-red-y: 128px
+$sprite-sample-red-offset-x: 0px
+$sprite-sample-red-offset-y: -128px
+$sprite-sample-red-width: 128px
+$sprite-sample-red-height: 128px
+$sprite-sample-red-total-width: 256px
+$sprite-sample-red-total-height: 256px
+$sprite-sample-red-image: '/assets/images/sprite.png'
+$sprite-sample-red: (0px, 128px, 0px, -128px, 128px, 128px, 256px, 256px, '/assets/images/sprite.png', 'sprite-sample-red', )
 
 
 /*
@@ -50,24 +50,30 @@ $sprite-icon03: (0px, 128px, 0px, -128px, 128px, 128px, 256px, 256px, '/assets/i
   gulp/sprite.coffee内cssSpritesheetNameで指定
   */
 
-$icon-width: 256px
-$icon-height: 256px
-$icon-image: '/assets/images/sprite.png'
-$icon-sprites: ($sprite-icon01, $sprite-icon02, $sprite-icon03, )
-$icon: (256px, 256px, '/assets/images/sprite.png', $icon-sprites, )
+$sprites-width: 256px
+$sprites-height: 256px
+$sprites-image: '/assets/images/sprite.png'
+$sprites-sprites: ($sprite-sample-black, $sprite-sample-blue, $sprite-sample-red, )
+$sprites: (256px, 256px, '/assets/images/sprite.png', $sprites-sprites, )
 
 
 
 
 /*
-  # オプションmixins
-  各spriteの値を取り出すmixin
+  # sprite mixins
+  ## sprite mixin
+  任意の画像のみ出力するmixin
+
+  @include sprite($sprite-sample-red)
+
+  のように使用する
   
+  ## 各値を取り出すmixin
+
   * sprite-width - widthを出力
   * sprite-height - heightを出力
   * sprite-position - positionを出力
   * sprite-image - image, background-imageを出力
-  * sprite - 上記すべて
 
   */
 
@@ -193,8 +199,16 @@ $icon: (256px, 256px, '/assets/images/sprite.png', $icon-sprites, )
 
 
 /*
-  # 複数sprite出力 
-  idも付与。sassにより上書きされる
+  # sprites mixin
+  すべての画像を書き出すmixin
+  (sprite-+ファイル名がクラス名となる)
+
+  * spritesは予め配列を用意し、spritesの引数に入れる
+  * $sprites-spritesはデフォルトで用意されたすべてを含む配列
+    ($spritesはgulp/sprite.coffeeのcssSpritesheetNameの値)
+
+  $sprites: $sprite-sample-blue, $sprite-sample-black  
+  @include sprites($sprites-sprites)
   */
 
 @mixin sprites($sprites)

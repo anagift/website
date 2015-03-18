@@ -1,0 +1,14 @@
+/*
+  # modules/list-table.sass
+  list-tableに関するクラスの定義  
+  BEMに沿いクラス名を付与  
+  旧float: leftなどでinlineで表現していた  
+  menuなどをcss3のdisplay: tableで実現
+  */
+
+.list-table
+  display: table
+  &__cell 
+    display: table-cell
+    vertical-align: middle
+    line-height: 0

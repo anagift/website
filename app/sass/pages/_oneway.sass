@@ -1,0 +1,28 @@
+/*
+ # pages/oneway.sass
+ /onewayに関するクラスを定義
+ prefixには`p-`を付与
+ */
+
+/*
+  # import
+  _sprite.sassを読込 
+  */
+
+@import '../sprite'
+
+/*
+  # gulp.spritesmithのサンプル
+  * @include sprite('$sprite-' + ファイル名)で指単一出力
+  * @include sprites($icon-sprites)ですべて出力
+    ('sprite-'+ファイル名のクラスとなる)
+  * spritesは予め配列を用意し、spritesの引数に入れる
+  * $sprites-spritesはデフォルトで用意されたすべてを含む配列
+    ($spritesはgulp/sprite.coffeeのcssSpritesheetNameの値)
+  */
+
+.p-oneway-sprite-sample
+  @include sprite($sprite-sample-red)
+
+$sprites: $sprite-sample-blue, $sprite-sample-black
+@include sprites($sprites-sprites)

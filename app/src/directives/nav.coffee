@@ -10,13 +10,17 @@
  * 
  * @description
  * nav表示用のdirective
- * nav.htmlをテンプレートとして読込表示
  * 
  * @example
 ###
 
 app = angular.module 'app'
 
+React = require 'react/addons'
+NAV = React.createFactory require '../components/nav'
+
 app.directive 'ngNav', ->
   restrict: 'A'
-  templateUrl: 'views/layouts/nav.html'
+
+  compile: (el) ->
+    React.render NAV(), el[0]

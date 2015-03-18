@@ -9,14 +9,12 @@ require 'angular'
 require 'angular-route'
 require 'angular-ui-router'
 require 'angular-resource'
-require 'angular-sanitize'
 require 'angular-mocks'
 
 module.exports = angular.module 'app', [
   'ui.router'
   'ngRoute'
   'ngResource'
-  'ngSanitize'
   'ngMockE2E'
 ]
 
@@ -31,11 +29,11 @@ require './controllers/benchmark'
 require './controllers/users'
 
 # directives
-require './directives/pagetitle'
-require './directives/oneway'
-require './directives/twoway'
-require './directives/benchmark'
+require './directives/title'
 require './directives/nav'
+require './directives/twoway'
+require './directives/transition'
+require './directives/benchmark'
 
 # service
 require './services/user'

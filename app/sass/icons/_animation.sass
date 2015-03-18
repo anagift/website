@@ -1,0 +1,26 @@
+/*
+  # icons/animation.sass
+  fontelloで作成したwebfont用sassのアニメーション用コード
+  */
+
+/*
+  # import
+  bourbonを読込 
+  */
+
+@import 'bourbon'
+
+/*
+  # .icon-animate-spin
+  * iconをする360度回転
+  */
+
+.animate-spin
+  display: inline-block
+  @include animation(spin 2s infinite linear)
+
+@include keyframes(spin)
+  from
+    @include transform(rotate(359deg))
+  to
+    @include transform(rotate(0deg))

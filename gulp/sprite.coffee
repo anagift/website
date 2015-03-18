@@ -12,7 +12,7 @@ gulp.task 'sprite', ->
     cssName: '_sprite.sass'
     imgPath: '/assets/images/sprite.png'
     cssFormat: 'sass'
-    cssSpritesheetName: 'icon'
+    cssSpritesheetName: 'sprites'
 
     # ###*
     #   cssVarMapを有効にするとエラーがでるため,

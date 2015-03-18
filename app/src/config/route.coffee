@@ -44,6 +44,12 @@ app.config [
         data:
           pageTitle: 'twoway'
 
+      .state 'transition',
+        url: '/transition'
+        templateUrl: 'views/pages/transition.html'
+        data:
+          pageTitle: 'transition'
+
       .state 'users',
         url: '/users'
         controller: 'UsersCtrl'
