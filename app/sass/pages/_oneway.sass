@@ -1,7 +1,11 @@
 /*
- # pages/oneway.sass
- /onewayに関するクラスを定義
- prefixには`p-`を付与
+  # pages/oneway.sass
+  /onewayに関するクラスを定義
+  prefixには`p-`を付与
+  
+  componetsディレクトリ下はprefixに`p-`を付与
+  その後BEMに沿いクラス名を付与
+  例: p-block--element__modifier 
  */
 
 /*
@@ -13,6 +17,7 @@
 
 /*
   # gulp.spritesmithのサンプル
+  
   * @include sprite('$sprite-' + ファイル名)で指単一出力
   * @include sprites($icon-sprites)ですべて出力
     ('sprite-'+ファイル名のクラスとなる)
