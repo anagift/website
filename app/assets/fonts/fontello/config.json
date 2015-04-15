@@ -7,6 +7,12 @@
   "ascent": 850,
   "glyphs": [
     {
+      "uid": "7222571caa5c15f83dcfd447c58d68d9",
+      "css": "search",
+      "code": 128269,
+      "src": "entypo"
+    },
+    {
       "uid": "e335adbc2d898c7d85d40c507796e7b4",
       "css": "mail",
       "code": 9993,
@@ -46,6 +52,12 @@
       "uid": "4ffa544c1a81c905f0a8a5745d8b9faa",
       "css": "minus-squared",
       "code": 8863,
+      "src": "entypo"
+    },
+    {
+      "uid": "815503841e980c848f55e0271deacead",
+      "css": "link",
+      "code": 128279,
       "src": "entypo"
     },
     {

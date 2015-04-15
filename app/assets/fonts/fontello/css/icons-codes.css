@@ -37,3 +37,5 @@
 .icon-attach:before { content: '📎'; } /* '\1f4ce' */
 .icon-mobile:before { content: '📱'; } /* '\1f4f1' */
 .icon-arrows-ccw:before { content: '🔄'; } /* '\1f504' */
+.icon-search:before { content: '🔍'; } /* '\1f50d' */
+.icon-link:before { content: '🔗'; } /* '\1f517' */
